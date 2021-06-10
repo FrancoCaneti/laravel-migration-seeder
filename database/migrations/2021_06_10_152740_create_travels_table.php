@@ -9,12 +9,17 @@ class CreateTravelsTable extends Migration
     /**
      * Run the migrations.
      *
-     * @return void
+     * @return void 
      */
     public function up()
     {
         Schema::create('travels', function (Blueprint $table) {
             $table->id();
+            $table->string('destinazione', 30);
+            $table->date('partenza');
+            $table->date('ritorno');
+            $table->tinyInteger('giorni')->unsigned();
+            $table->string('Descrizione', 50);
             $table->timestamps();
         });
     }
